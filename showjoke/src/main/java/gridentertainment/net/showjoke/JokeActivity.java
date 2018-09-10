@@ -16,6 +16,10 @@ public class JokeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_joke);
 
         TextView jkTv = findViewById(R.id.textViewjk);
-        jkTv.setText(getIntent().getStringExtra(JK));
+
+        if(getIntent().getExtras() != null)
+        {
+            jkTv.setText(getIntent().getStringExtra(JK));
+        }
     }
 }

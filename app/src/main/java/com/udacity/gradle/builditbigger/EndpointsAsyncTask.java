@@ -41,13 +41,12 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
                         }
                     })
                     .setApplicationName("Jokes App");
-
             myApiService = builder.build();
         }
         try {
             return myApiService.tellJoke().execute().getData();
         } catch (IOException e) {
-            return e.getMessage();
+            return null;
         }
     }
 
